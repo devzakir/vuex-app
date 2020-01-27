@@ -28,12 +28,8 @@ export const store = new Vuex.Store({
 
   mutations: {
     reducePrice(state){
-      return state.products = state.products.map(product => {
-        return {
-          id: product.id,
-          name: product.name,
+      state.products.forEach(product => {
           price: product.price -= 2
-        }
       });
     }
   },
